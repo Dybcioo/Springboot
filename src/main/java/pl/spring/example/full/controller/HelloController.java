@@ -55,6 +55,7 @@ public class HelloController {
         logger.info("users {}",users);
 
         modelAndView.addObject("allUsers", users);
+        modelAndView.addObject("allUsers", users);
         modelAndView.setViewName("users");
         return modelAndView;
     }
