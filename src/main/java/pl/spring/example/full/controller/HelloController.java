@@ -22,4 +22,20 @@ public class HelloController {
         modelAndView.setViewName("home");
         return modelAndView;
     }
+
+    @GetMapping("/personData")
+    ModelAndView mySecondView(ModelAndView modelAndView, @RequestParam(defaultValue = "imie") String name,
+                              @RequestParam(defaultValue = "nazwisko") String surname,
+                                @RequestParam(defaultValue = "22") int years){
+
+        logger.info("name: {}", name);
+        logger.info("surname: {}", surname);
+        logger.info("years: {}", years);
+
+        modelAndView.addObject("name", name);
+        modelAndView.addObject("surname", surname);
+        modelAndView.addObject("years", years);
+        modelAndView.setViewName("person");
+        return modelAndView;
+    }
 }
